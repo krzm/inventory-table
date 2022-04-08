@@ -1,18 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+	<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
 		<PackageReference Include="Unity" Version="5.11.10" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 	</ItemGroup>
 
-  <!--Debug refs-->
-	<ItemGroup>
+  	<!--Debug refs-->
+	<!-- <ItemGroup>
 		<Reference Include="DIHelper">
 			<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
 		</Reference>
@@ -25,10 +25,10 @@
     	<Reference Include="Inventory.Data">
 			<HintPath>..\..\inventory-data\Inventory.Data\bin\Debug\net6.0\Inventory.Data.dll</HintPath>
 		</Reference>
-	</ItemGroup>
+	</ItemGroup> -->
 
 	<!--Release refs-->
-	<!-- <ItemGroup>
+	<ItemGroup>
 		<Reference Include="DIHelper">
 			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
 		</Reference>
@@ -41,6 +41,6 @@
     	<Reference Include="Inventory.Data">
 			<HintPath>..\..\..\Build\inventory-data\Inventory.Data\Inventory.Data.dll</HintPath>
 		</Reference>
-	</ItemGroup> -->
+	</ItemGroup>
 
 </Project>
