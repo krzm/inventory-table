@@ -47,7 +47,10 @@ public class ItemTable
 
 	private static string GetName(Item e) => e.Name;
 
-	private static string GetCategory(Item e) => e.ItemCategory.Name;
+	private static string GetCategory(Item e) => 
+		e.ItemCategory != null ? 
+			(string.IsNullOrWhiteSpace(e.ItemCategory.Name) ? Empty : e.ItemCategory.Name)
+			: Empty;
 
 	private static string GetCategoryId(Item e) => e.ItemCategoryId.ToString();
 
