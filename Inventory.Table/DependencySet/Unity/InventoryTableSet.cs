@@ -18,21 +18,20 @@ public class InventoryTableSet
     {
         Container
             .RegisterType<IColumnCalculator<Item>, ColumnCalculator<Item>>()
-            .RegisterType<IColumnCalculator<ItemCategory>, ColumnCalculator<ItemCategory>>()
-            .RegisterType<IColumnCalculator<ItemDetail>, ColumnCalculator<ItemDetail>>()
-            .RegisterType<IColumnCalculator<ItemImage>, ColumnCalculator<ItemImage>>()
-            .RegisterType<IColumnCalculator<Stock>, ColumnCalculator<Stock>>()
-            .RegisterType<IColumnCalculator<StockDetail>, ColumnCalculator<StockDetail>>();
+            .RegisterType<IColumnCalculator<Category>, ColumnCalculator<Category>>()
+            .RegisterType<IColumnCalculator<Size>, ColumnCalculator<Size>>()
+            .RegisterType<IColumnCalculator<Image>, ColumnCalculator<Image>>()
+            .RegisterType<IColumnCalculator<Stock>, ColumnCalculator<Stock>>();
     }
 
     protected override void RegisterTableProviders()
     {
         Container
+            .RegisterType<ITableTextEditor, TableTextEditor>()
             .RegisterType<IDataToText<Item>, ItemTable>()
-            .RegisterType<IDataToText<ItemCategory>, ItemCategoryTable>()
-            .RegisterType<IDataToText<ItemDetail>, ItemDetailTable>()
-            .RegisterType<IDataToText<ItemImage>, ItemImageTable>()
-            .RegisterType<IDataToText<Stock>, StockTable>()
-            .RegisterType<IDataToText<StockDetail>, StockDetailTable>();
+            .RegisterType<IDataToText<Category>, CategoryTable>()
+            .RegisterType<IDataToText<Size>, SizeTable>()
+            .RegisterType<IDataToText<Image>, ImageTable>()
+            .RegisterType<IDataToText<Stock>, StockTable>();
     }
 }

@@ -48,13 +48,13 @@ public class ItemTable
 	private static string GetName(Item e) => e.Name;
 
 	private static string GetCategory(Item e) => 
-		e.ItemCategory != null ? 
-			(string.IsNullOrWhiteSpace(e.ItemCategory.Name) ? Empty : e.ItemCategory.Name)
+		e.Category != null ? 
+			(string.IsNullOrWhiteSpace(e.Category.Name) ? Empty : e.Category.Name)
 			: Empty;
 
-	private static string GetCategoryId(Item e) => e.ItemCategoryId.ToString();
+	private static string GetCategoryId(Item e) => e.CategoryId.ToString();
 
-	private static string GetDetailId(Item e) => e.ItemDetailId.HasValue ? e.ItemDetailId.Value.ToString() : Empty;
+	private static string GetDetailId(Item e) => e.SizeId.HasValue ? e.SizeId.Value.ToString() : Empty;
 
 	private static string GetImages(Item e) => e.Images != null ? e.Images.Count.ToString() : Empty;
 
@@ -85,21 +85,21 @@ public class ItemTable
 	private static List<int> GetCategoryLength(List<Item> items)
 	{
 		var rows = items.Select(e => GetCategory(e).Length).ToList();
-		rows.Insert(0, nameof(Item.ItemCategory).Length);
+		rows.Insert(0, nameof(Item.Category).Length);
 		return rows;
 	}
 
 	private static List<int> GetCategoryIdLength(List<Item> items)
 	{
 		var rows = items.Select(e => GetCategoryId(e).Length).ToList();
-		rows.Insert(0, nameof(Item.ItemCategoryId).Length);
+		rows.Insert(0, nameof(Item.CategoryId).Length);
 		return rows;
 	}
 
 	private static List<int> GetDetailIdLength(List<Item> items)
 	{
 		var rows = items.Select(e => GetDetailId(e).Length).ToList();
-		rows.Insert(0, nameof(Item.ItemDetailId).Length);
+		rows.Insert(0, nameof(Item.SizeId).Length);
 		return rows;
 	}
 

@@ -18,21 +18,19 @@ public class InventoryTableSet
     {
         Container
             .AddSingleton<IColumnCalculator<Item>, ColumnCalculator<Item>>()
-            .AddSingleton<IColumnCalculator<ItemCategory>, ColumnCalculator<ItemCategory>>()
-            .AddSingleton<IColumnCalculator<ItemDetail>, ColumnCalculator<ItemDetail>>()
-            .AddSingleton<IColumnCalculator<ItemImage>, ColumnCalculator<ItemImage>>()
-            .AddSingleton<IColumnCalculator<Stock>, ColumnCalculator<Stock>>()
-            .AddSingleton<IColumnCalculator<StockDetail>, ColumnCalculator<StockDetail>>();
+            .AddSingleton<IColumnCalculator<Category>, ColumnCalculator<Category>>()
+            .AddSingleton<IColumnCalculator<Size>, ColumnCalculator<Size>>()
+            .AddSingleton<IColumnCalculator<Image>, ColumnCalculator<Image>>()
+            .AddSingleton<IColumnCalculator<Stock>, ColumnCalculator<Stock>>();
     }
 
     protected override void RegisterTableProviders()
     {
         Container
             .AddSingleton<IDataToText<Item>, ItemTable>()
-            .AddSingleton<IDataToText<ItemCategory>, ItemCategoryTable>()
-            .AddSingleton<IDataToText<ItemDetail>, ItemDetailTable>()
-            .AddSingleton<IDataToText<ItemImage>, ItemImageTable>()
-            .AddSingleton<IDataToText<Stock>, StockTable>()
-            .AddSingleton<IDataToText<StockDetail>, StockDetailTable>();
+            .AddSingleton<IDataToText<Category>, CategoryTable>()
+            .AddSingleton<IDataToText<Size>, SizeTable>()
+            .AddSingleton<IDataToText<Image>, ImageTable>()
+            .AddSingleton<IDataToText<Stock>, StockTable>();
     }
 }
