@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Unity" Version="5.11.10"/>
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0-preview.5.22301.12"/>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
 	</ItemGroup>
-
 	<!--Debug refs-->
 	<!-- <ItemGroup>
 		<Reference Include="DIHelper">
@@ -26,7 +23,6 @@
 			<HintPath>..\..\inventory-data\Inventory.Data\bin\Debug\net6.0\Inventory.Data.dll</HintPath>
 		</Reference>
 	</ItemGroup> -->
-
 	<!--Release refs-->
 	<ItemGroup>
 		<Reference Include="DIHelper">
@@ -42,5 +38,4 @@
 			<HintPath>..\..\..\Build\inventory-data\Inventory.Data\Inventory.Data.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-    
 </Project>
