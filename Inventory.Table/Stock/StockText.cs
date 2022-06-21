@@ -3,10 +3,10 @@ using Inventory.Data;
 
 namespace Inventory.Table;
 
-public abstract class StockToText
+public abstract class StockText
     : TextTable<Stock>
 {
-    public StockToText(
+    public StockText(
 		ITableTextEditor tableTextEditor
 		, IColumnCalculator<Stock> columnCalculator)
 			: base(tableTextEditor, columnCalculator)

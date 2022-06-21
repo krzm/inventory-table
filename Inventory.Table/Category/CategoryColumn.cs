@@ -3,10 +3,10 @@ using Inventory.Data;
 
 namespace Inventory.Table;
 
-public abstract class CategoryToColumn 
-	: CategoryToText
+public abstract class CategoryColumn 
+	: CategoryText
 {
-    public CategoryToColumn(
+    public CategoryColumn(
 		ITableTextEditor tableTextEditor
 		, IColumnCalculator<Category> columnCalculator) 
 			: base(tableTextEditor, columnCalculator)

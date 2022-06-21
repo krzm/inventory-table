@@ -4,7 +4,7 @@ using Inventory.Data;
 namespace Inventory.Table;
 
 public class StockTable
-    : StockToColumn
+    : StockColumn
 {
 	public StockTable(
 		ITableTextEditor tableTextEditor

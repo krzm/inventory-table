@@ -4,7 +4,7 @@ using Inventory.Data;
 namespace Inventory.Table;
 
 public class CategoryTable 
-    : CategoryToColumn
+    : CategoryColumn
 {
 	public CategoryTable(
 		ITableTextEditor tableTextEditor
