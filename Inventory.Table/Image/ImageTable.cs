@@ -4,7 +4,7 @@ using Inventory.Data;
 namespace Inventory.Table;
 
 public class ImageTable 
-	: TextTable<Image>
+	: ImageColumn
 {
 	public ImageTable(
 		ITableTextEditor tableTextEditor
@@ -18,7 +18,7 @@ public class ImageTable
 		SetColumns();
 	}
 
-	private void SetColumns()
+	protected void SetColumns()
 	{
 		Editor.AddColumn(GetColumnData(nameof(Image.Id)));
         Editor.AddColumn(GetColumnData(nameof(Image.Item)));
@@ -26,47 +26,19 @@ public class ImageTable
 		Editor.AddColumn(GetColumnData(nameof(Image.Path)));
 	}
 
-	protected override void CreateTableRow(Image e)
+	protected override void CreateTableRow(Image m)
 	{
-		Editor.AddValue(GetColumnData(nameof(Image.Id)), e.Id.ToString());
-		Editor.AddValue(GetColumnData(nameof(Image.Item)), e.Item.Name);
-		Editor.AddValue(GetColumnData(nameof(Image.ItemId)), e.ItemId.ToString());
-		Editor.AddValue(GetColumnData(nameof(Image.Path)), e.Path);		
+		Editor.AddValue(GetColumnData(nameof(Image.Id)), GetId(m));
+		Editor.AddValue(GetColumnData(nameof(Image.Item)), GetName(m));
+		Editor.AddValue(GetColumnData(nameof(Image.ItemId)), GetItemId(m));
+		Editor.AddValue(GetColumnData(nameof(Image.Path)), GetPath(m));		
     }
 
-	protected override void SetColumnsSize(List<Image> paths)
+	protected override void SetColumnsSize(List<Image> m)
 	{
-		SetColumn(nameof(Image.Id), GetIdsLength(paths));
-		SetColumn(nameof(Image.Item), GetItemsLength(paths));
-		SetColumn(nameof(Image.ItemId), GetItemIdsLength(paths));
-		SetColumn(nameof(Image.Path), GetPathsLength(paths));
+		SetColumn(nameof(Image.Id), GetIdsLength(m));
+		SetColumn(nameof(Image.Item), GetItemsLength(m));
+		SetColumn(nameof(Image.ItemId), GetItemIdsLength(m));
+		SetColumn(nameof(Image.Path), GetPathsLength(m));
 	}
-
-	private static List<int> GetIdsLength(List<Image> models)
-    {
-        var rows = models.Select(e => e.Id.ToString().Length).ToList();
-		rows.Insert(0, nameof(Image.Id).Length);
-		return rows;
-    }
-
-	private static List<int> GetItemsLength(List<Image> models)
-    {
-            var rows = models.Select(e => e.Item.Name.Length).ToList();
-		rows.Insert(0, nameof(Image.Item).Length);
-		return rows;
-    }
-
-	private static List<int> GetItemIdsLength(List<Image> models)
-    {
-            var rows = models.Select(e => e.ItemId.ToString().Length).ToList();
-		rows.Insert(0, nameof(Image.ItemId).Length);
-		return rows;
-    }
-
-	private static List<int> GetPathsLength(List<Image> models)
-    {
-        var rows = models.Select(e => e.Path.Length).ToList();
-		rows.Insert(0, nameof(Image.Path).Length);
-		return rows;
-    }
 }
